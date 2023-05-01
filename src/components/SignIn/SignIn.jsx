@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const SignIn = () => {
   return (
-    <div className="text-center">
-      <div className="w-full max-w-md p-4 rounded-md shadow sm:p-8 bg-slate-100">
+    <div className="">
+      <div className="w-full mt-8 mb-8 max-w-md p-4 rounded-md shadow sm:p-8 mx-auto bg-slate-100">
         <h2 className="mb-3 text-3xl font-semibold text-center">
           Login to your account
         </h2>
@@ -97,7 +97,7 @@ const SignIn = () => {
             type="button"
             className="w-full px-8 py-3 font-semibold rounded-md dark:bg-violet-400 dark:text-gray-900"
           >
-            Sign in
+            Log in
           </button>
         </form>
       </div>
