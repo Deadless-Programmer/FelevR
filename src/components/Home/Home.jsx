@@ -4,7 +4,7 @@ import Data from "../Data/Data";
 
 const Home = () => {
   const allData = useLoaderData();
-  console.log(allData);
+//   console.log(allData);
   // const {chefPicture, chefName, yearsOfExperience, numbersOfRecipes, Likes }= allData;
   return (
     <div>
