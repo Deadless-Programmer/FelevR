@@ -1,11 +1,19 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import Data from "../Data/Data";
+import Spinner from "../Spinner/Spinner";
 
 const Home = () => {
+
   const allData = useLoaderData();
 //   console.log(allData);
   // const {chefPicture, chefName, yearsOfExperience, numbersOfRecipes, Likes }= allData;
+
+
+  const navigation = useNavigation()
+  if(navigation.state ==="loading"){
+	return <Spinner></Spinner>
+  }
   return (
     <div>
       <section className="dark:bg-gray-800 dark:text-gray-100">

@@ -1,6 +1,7 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import RecipeInfo from "../RecipeInfo/RecipeInfo";
+import Spinner from "../Spinner/Spinner";
 
 const ViewDetails = () => {
   const data = useLoaderData();
@@ -14,6 +15,12 @@ const ViewDetails = () => {
     Likes,
     Recipes,
   } = data;
+
+
+  const navigation = useNavigation()
+  if(navigation.state ==="loading"){
+	return <Spinner></Spinner>
+  }
   return (
     <div className="flex justify-between p-10 ">
       <div className="w-[48%] ">
