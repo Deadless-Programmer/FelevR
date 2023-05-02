@@ -5,7 +5,7 @@ import SignUp from "../../components/SignUp/SignUp";
 import Home from "../../components/Home/Home";
 import Blog from "../../components/Blog/Blog";
 import ViewDetails from "../../components/ViewDetails/ViewDetails";
-import Spinner from "../../components/Spinner/Spinner";
+
 import ErrorPage from "../../components/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([

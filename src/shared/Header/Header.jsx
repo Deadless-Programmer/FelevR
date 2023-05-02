@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import ActiveLink from '../../components/ActiveLink/ActiveLink';
+import { AuthContext } from '../../Provider/AuthProvider';
+import { FaUserCircle } from "react-icons/fa";
 
 const Header = () => {
+
+
+  const {user}=useContext(AuthContext);
+
+
+
     return (
         <div>
 <div className="navbar  bg-orange-100 drop-shadow">
@@ -33,13 +41,15 @@ const Header = () => {
       <li className='font-semibold'><ActiveLink to="/" >Home</ActiveLink></li>
       
       <li className='font-semibold'><ActiveLink to="/blog">Blog</ActiveLink></li>
-      <li className='font-semibold'><ActiveLink to="login">Log-in</ActiveLink></li>
-      <li className='font-semibold'><ActiveLink to="/signup">Sign-up</ActiveLink></li>
+      
+      {user ? <li className='font-semibold'><ActiveLink to="/login">Log-in</ActiveLink></li> : <li className='font-semibold'><ActiveLink to="Login">Log-in</ActiveLink></li> }
+
+      
+      {/* <li className='font-semibold'><ActiveLink to="/signup">Sign-up</ActiveLink></li> */}
     </ul>
+    {user && <p className='font-semibold'> <FaUserCircle className='text-2xl'></FaUserCircle> </p>  }
   </div>
-  <div className="navbar-end">
-    <a className="btn">Login</a>
-  </div>
+  
 </div>
         </div>
     );

@@ -22,8 +22,8 @@ const ViewDetails = () => {
 	return <Spinner></Spinner>
   }
   return (
-    <div className="flex justify-between p-10 ">
-      <div className="w-[48%] ">
+    <div className=" p-10 ">
+      <div className="w-full ">
         <div className="shadow-2xl">
           <article className="flex flex-col dark:bg-gray-900 ">
             <a
@@ -33,7 +33,7 @@ const ViewDetails = () => {
             >
               <img
                 alt=""
-                className="object-cover w-full h-96 dark:bg-gray-500"
+                className="object-cover w-full h-screen dark:bg-gray-500"
                 src={chefPicture}
               />
             </a>
@@ -58,7 +58,7 @@ const ViewDetails = () => {
           </article>
         </div>
       </div>
-      <div className="w-[48%] grid grid-cols-1 gap-3 overflow-y-auto h-screen">
+      <div className="w-full grid grid-cols-3 gap-3 overflow-y-auto h-screen">
         {Recipes.map((recipe) => (
           <RecipeInfo key={recipe.id} recipe={recipe}></RecipeInfo>
         ))}
