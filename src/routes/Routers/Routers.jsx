@@ -4,6 +4,7 @@ import SignIn from "../../components/SignIn/SignIn";
 import SignUp from "../../components/SignUp/SignUp";
 import Home from "../../components/Home/Home";
 import Blog from "../../components/Blog/Blog";
+import ViewDetails from "../../components/ViewDetails/ViewDetails";
 
 const router = createBrowserRouter([
     {
@@ -14,6 +15,12 @@ const router = createBrowserRouter([
                 path:'/',
                 element:<Home></Home>,
                 loader: ()=> fetch('http://localhost:5000/allData')
+            },
+            {
+                path:'/allData/:id',
+                element:<ViewDetails></ViewDetails>,
+                loader : ({params})=> fetch(`http://localhost:5000/allData/${params.id}`)
+
             },
             {
                 path:'/blog',

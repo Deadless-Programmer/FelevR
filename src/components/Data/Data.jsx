@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Data = ({ data }) => {
   const {id, chefPicture, chefName, yearsOfExperience, numbersOfRecipes, Likes } =
@@ -27,9 +28,9 @@ const Data = ({ data }) => {
           </div>
 
           <div className="my-5">
-            <button className="btn btn-outline btn-success">
+            <Link to={`/allData/${id}`} ><button className="btn btn-outline btn-success">
               View Recipes
-            </button>
+            </button></Link>
           </div>
         </div>
       </div>
