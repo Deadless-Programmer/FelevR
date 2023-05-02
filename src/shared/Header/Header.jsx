@@ -7,9 +7,13 @@ import { FaUserCircle } from "react-icons/fa";
 const Header = () => {
 
 
-  const {user}=useContext(AuthContext);
+  const {user, logOut}=useContext(AuthContext);
 
-
+    const handleLogOut =()=>{
+      logOut()
+      .then()
+      .catch(error =>console.log(error))
+    }
 
     return (
         <div>
@@ -41,13 +45,31 @@ const Header = () => {
       <li className='font-semibold'><ActiveLink to="/" >Home</ActiveLink></li>
       
       <li className='font-semibold'><ActiveLink to="/blog">Blog</ActiveLink></li>
-      
-      {user ? <li className='font-semibold'><ActiveLink to="/login">Log-in</ActiveLink></li> : <li className='font-semibold'><ActiveLink to="Login">Log-in</ActiveLink></li> }
+      {user ? (
+							<>
+								<div
+									className='avatar tooltip flex items-center gap-5 tooltip-bottom tooltip-secondary'
+									data-tip={user.displayName}>
+									<div className='w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2'>
+										<img src={user.photoURL} />
+									</div>
+								</div>
+								<button
+									onClick={handleLogOut}
+									className='shadow-md p-3 hover:bg-blue-900 rounded font-bold text-lg'>
+									<ActiveLink to='/login'>Sign Out</ActiveLink>
+								</button>
+							</>
+						) : (
+							<button className='shadow-md p-3 hover:bg-blue-900 rounded font-bold text-lg'>
+								<ActiveLink to='/login'>Login</ActiveLink>
+							</button>
+						)}
 
       
-      {/* <li className='font-semibold'><ActiveLink to="/signup">Sign-up</ActiveLink></li> */}
+      
     </ul>
-    {user && <p className='font-semibold'> <FaUserCircle className='text-2xl'></FaUserCircle> </p>  }
+    
   </div>
   
 </div>
