@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const SignUp = () => {
   return (
     <div>
-      <div className="w-full mt-8 mb-8 max-w-md p-4 rounded-md shadow sm:p-8 mx-auto  bg-slate-100">
+      <div className="w-full mt-8 mb-8 max-w-md p-4 rounded-md shadow sm:p-8 mx-auto   bg-orange-200">
         <h2 className="mb-3 text-3xl font-semibold text-center">
           Register account
         </h2>
