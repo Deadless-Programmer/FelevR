@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ActiveLink from '../../components/ActiveLink/ActiveLink';
 
 const Header = () => {
     return (
@@ -29,11 +30,11 @@ const Header = () => {
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
-      <li className='font-semibold'><Link to="/" >Home</Link></li>
+      <li className='font-semibold'><ActiveLink to="/" >Home</ActiveLink></li>
       
-      <li className='font-semibold'><Link to="/blog">Blog</Link></li>
-      <li className='font-semibold'><Link to="login">Log-in</Link></li>
-      <li className='font-semibold'><Link to="/signup">Sign-up</Link></li>
+      <li className='font-semibold'><ActiveLink to="/blog">Blog</ActiveLink></li>
+      <li className='font-semibold'><ActiveLink to="login">Log-in</ActiveLink></li>
+      <li className='font-semibold'><ActiveLink to="/signup">Sign-up</ActiveLink></li>
     </ul>
   </div>
   <div className="navbar-end">
