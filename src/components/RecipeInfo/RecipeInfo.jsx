@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import { toast } from "react-hot-toast";
 import { FaCircle } from "react-icons/fa";
+
+import 'react-toastify/dist/ReactToastify.css';
 const RecipeInfo = ({ recipe }) => {
   console.log(recipe);
+  const [isFavorite, setIsFavorite] = useState(false);
   const { name, ingredients, instructions, rating } = recipe;
+  const handleFavoriteClick = () => {
+    setIsFavorite(true);
+   toast.success('favorites!🤙')
+  };
   return (
     <div>
       <div className="card w-full bg-red-100 shadow-2xl">
@@ -31,7 +39,8 @@ const RecipeInfo = ({ recipe }) => {
           </div>
           <div className="flex items-center">
             <p> Rating : {rating}</p> 
-            <button type="button" className="px-8 py-3 text-white font-semibold rounded bg-orange-500">Favorite</button>
+            <button onClick={handleFavoriteClick}
+        disabled={isFavorite} type="button" className="px-8 py-3 text-white font-semibold rounded bg-orange-500">{isFavorite ? 'Favorited' : 'Favorite'}</button>
           </div>
         </div>
       </div>
