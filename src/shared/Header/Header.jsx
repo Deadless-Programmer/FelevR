@@ -57,7 +57,7 @@ const Header = () => {
 								<button
 									onClick={handleLogOut}
 									className='shadow p-3 hover:bg-blue-400 rounded font-bold text-lg'>
-									<ActiveLink to='/login'>Sign Out</ActiveLink>
+									<ActiveLink to='/'>Sign Out</ActiveLink>
 								</button>
 							</>
 						) : (
