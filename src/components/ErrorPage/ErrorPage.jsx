@@ -1,6 +1,7 @@
 import React from 'react';
 import Lottie from "lottie-react";
 import error from "../../assets/98642-error-404.json"
+import { Link } from 'react-router-dom';
 const ErrorPage = () => {
     return (
       <div>
@@ -10,7 +11,7 @@ const ErrorPage = () => {
 			<h2 className="mb-8 font-extrabold text-9xl dark:text-gray-600">
             <Lottie className="w-96 h-96" animationData={error} />
 			</h2>
-			
+			<Link to="/"><button type="button" className="px-8 text-white py-3 font-semibold rounded bg-orange-500 ">Back to home</button></Link>
 		</div>
 	</div>
 </section>
