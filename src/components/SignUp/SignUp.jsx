@@ -19,7 +19,7 @@ const SignUp = () => {
     const photo = form.photo.value;
     console.log(name, email, password, photo);
     if(password.length<6){
-      setError('password should have at least 6 character');
+      setError('Password should have at least 6 character');
       return;
     }
     createUser(email, password)
@@ -30,7 +30,7 @@ const SignUp = () => {
       
       form.reset()
       setError('')
-      setSuccess('User has create account successfully')
+      setSuccess('User has been create account successfully')
       
     })
     .catch(error=>{

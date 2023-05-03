@@ -23,7 +23,7 @@ const RecipeInfo = ({ recipe }) => {
               {ingredients
                 .slice(0, 5)
                 .map((single) =>
-                  single ? <li className=""> {single}</li> : ""
+                  single ? <li  className="">  {single}</li> : ""
                 )}
             </p>
 

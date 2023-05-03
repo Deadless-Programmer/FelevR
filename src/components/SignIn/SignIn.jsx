@@ -1,32 +1,50 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider";
 const SignIn = () => {
-  const {signIn }= useContext(AuthContext);
+  const { signIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location =useLocation();
+  console.log('login page location', location)
+  const from = location.state?.from?.pathname || '/';
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
   const logingHandler = (event) => {
     event.preventDefault();
+
+    setSuccess("");
+    setError("");
     const form = event.target;
 
     const email = form.email.value;
     const password = form.password.value;
-    
 
     console.log(email, password);
+    if (password.length < 6) {
+      setError("Password should have at least 6 character");
+      return;
+    }
     signIn(email, password)
-    .then(result=>{
-      const loggedUser = result.user;
-      console.log(loggedUser)
-      form.reset()
-    })
-    .catch(error=>
-      console.error(error))
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        form.reset();
+        setError("");
+        setSuccess("User has create login successfully");
+        navigate(from, {replace: true})
+      })
+      .catch((error) => setError(error.message));
   };
 
   return (
     <div className="">
       <div className="hero min-h-screen bg-base-200">
-        <form onSubmit={logingHandler} className="hero-content flex-col lg:flex-row-reverse">
+        <form
+          onSubmit={logingHandler}
+          className="hero-content flex-col lg:flex-row-reverse"
+        >
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <div className="card-body w-96">
               <div className="form-control">
@@ -91,16 +109,17 @@ const SignIn = () => {
                     <p>Login with GitHub</p>
                   </button>
                 </div>
-                
               </div>
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Login</button>
               </div>
               <div className="">
-                  <span>
-                    Don't have account ? <Link to="/signup">Sign up here</Link>{" "}
-                  </span>
-                </div>
+                <span>
+                  Don't have account ? <Link to="/signup">Sign up here</Link>{" "}
+                </span>
+                <p className="text-red-500">{error}</p>
+                <p className="text-green-500">{success}</p>
+              </div>
             </div>
           </div>
         </form>

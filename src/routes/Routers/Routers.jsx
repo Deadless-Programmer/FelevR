@@ -7,6 +7,7 @@ import Blog from "../../components/Blog/Blog";
 import ViewDetails from "../../components/ViewDetails/ViewDetails";
 
 import ErrorPage from "../../components/ErrorPage/ErrorPage";
+import PrivetRoute from "../PrivetRoute";
 
 const router = createBrowserRouter([
     {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/allData/:id',
-                element:<ViewDetails></ViewDetails>,
+                element: <PrivetRoute><ViewDetails></ViewDetails></PrivetRoute>,
                 loader : ({params})=> fetch(`http://localhost:5000/allData/${params.id}`)
 
             },

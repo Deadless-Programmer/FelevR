@@ -56,12 +56,12 @@ const Header = () => {
 								</div>
 								<button
 									onClick={handleLogOut}
-									className='shadow-md p-3 hover:bg-blue-900 rounded font-bold text-lg'>
+									className='shadow p-3 hover:bg-blue-400 rounded font-bold text-lg'>
 									<ActiveLink to='/login'>Sign Out</ActiveLink>
 								</button>
 							</>
 						) : (
-							<button className='shadow-md p-3 hover:bg-blue-900 rounded font-bold text-lg'>
+							<button className='shadow p-3 hover:bg-blue-400 rounded font-bold text-lg'>
 								<ActiveLink to='/login'>Login</ActiveLink>
 							</button>
 						)}
@@ -73,6 +73,8 @@ const Header = () => {
   </div>
   
 </div>
+
+
         </div>
     );
 };
