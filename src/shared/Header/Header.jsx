@@ -61,7 +61,7 @@ const Header = () => {
                   </button>
                 </>
               ) : (
-                <button className=" p-3  hover:bg-blue-200 rounded font-semibold ">
+                <button className=" p-3 mr-30  hover:bg-blue-200 rounded font-semibold ">
                   <ActiveLink to="/login">Login</ActiveLink>
                 </button>
               )}
@@ -80,10 +80,7 @@ const Header = () => {
             <li className="font-semibold">
               <ActiveLink to="/blog">Blog</ActiveLink>
             </li>
-          </ul>
-        </div>
-        <div className="navbar-end md:mr-10">
-          {user ? (
+            {user ? (
             <>
               <div
                 className="avatar tooltip flex items-center gap-5 tooltip-bottom tooltip-secondary"
@@ -105,10 +102,19 @@ const Header = () => {
               <ActiveLink to="/login">Login</ActiveLink>
             </button>
           )}
+          </ul>
+        </div>
+        <div className="navbar-end md:mr-10">
+        <button className="btn btn-ghost btn-circle">
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+    </button>
         </div>
       </div>
+      
     </div>
   );
 };
-
+{/* <button className="btn btn-ghost btn-circle">
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+    </button> */}
 export default Header;

@@ -1,9 +1,17 @@
 import React from "react";
+import ReactDOM from "react-dom";
+import Pdf from "react-to-pdf";
+const ref = React.createRef();
 
 const Blog = () => {
-  return (
-    <div>
-      <section className="dark:bg-gray-800 dark:text-gray-100">
+	return (
+		<div className="" >
+      <Pdf targetRef={ref} filename="code-example.pdf">
+        {({ toPdf }) => <button onClick={toPdf}>Generate Pdf</button>}
+      </Pdf>
+      <div ref={ref}>
+        <div>
+        <section className="dark:bg-gray-800 dark:text-gray-100">
         <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
           <h2 className="mb-12 text-4xl font-bold leading-none text-center sm:text-4xl">
             Frequently Asked Questions
@@ -54,7 +62,7 @@ const Blog = () => {
             </details>
             <details>
               <summary className="py-2 outline-none cursor-pointer focus:underline">
-              Tell us the difference between node js and express js.
+                Tell us the difference between node js and express js.
               </summary>
               <div className="px-4 pb-4 space-y-2">
                 <p>
@@ -70,30 +78,43 @@ const Blog = () => {
                   HTTP requests and responses, routing, middleware, and other
                   common web application functionalities.
                 </p>
-                
               </div>
             </details>
             <details>
               <summary className="py-2 outline-none cursor-pointer focus:underline">
-              What is a custom hook, and why will you create a custom hook?
+                What is a custom hook, and why will you create a custom hook?
               </summary>
               <div className="px-4 pb-4 space-y-2">
                 <p>
-                
-<span className="font-semibold">Node.js</span> and Express.js are both technologies that are commonly used in building web applications. Node.js is a JavaScript runtime that allows developers to run JavaScript code outside of the browser. It provides a set of core modules and APIs that enable developers to build scalable and high-performance applications on the server-side.
-
-
+                  <span className="font-semibold">Node.js</span> and Express.js
+                  are both technologies that are commonly used in building web
+                  applications. Node.js is a JavaScript runtime that allows
+                  developers to run JavaScript code outside of the browser. It
+                  provides a set of core modules and APIs that enable developers
+                  to build scalable and high-performance applications on the
+                  server-side.
                 </p>
                 <p>
-                <span className="font-semibold">Express.js</span> , on the other hand, is a web application framework built on top of Node.js. It provides a set of features and functionalities to make it easier to build web applications using Node.js. It provides an abstraction layer over the core Node.js APIs, making it easier to handle HTTP requests and responses, routing, middleware, and other common web application functionalities.
+                  <span className="font-semibold">Express.js</span> , on the
+                  other hand, is a web application framework built on top of
+                  Node.js. It provides a set of features and functionalities to
+                  make it easier to build web applications using Node.js. It
+                  provides an abstraction layer over the core Node.js APIs,
+                  making it easier to handle HTTP requests and responses,
+                  routing, middleware, and other common web application
+                  functionalities.
                 </p>
               </div>
             </details>
           </div>
         </div>
       </section>
+        </div>
+      </div>
     </div>
   );
-};
-
+}
+const rootElement = document.getElementById("root");
+ReactDOM.render(<Blog />, rootElement);
 export default Blog;
+

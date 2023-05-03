@@ -5,7 +5,7 @@ import Footer from '../../shared/Footer/Footer';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Spinner from '../../components/Spinner/Spinner';
 
-// import Spinner from '../../components/Spinner/Spinner';
+
 
 const Main = () => {
     // const loadSpinner =useLoaderData();

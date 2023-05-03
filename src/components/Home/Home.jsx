@@ -18,7 +18,8 @@ const Home = () => {
         <div className="container md:flex flex-col  justify-between p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
           <div className="md:w-[48%]">
             <h1 className="text-5xl font-bold leading-none sm:text-6xl">
-              <span className="text-orange-500">Healthy</span> And Delicious Food Recipes
+              <span className="text-orange-500">Healthy</span> And Delicious
+              Food Recipes
             </h1>
             <p className="mt-6 mb-8 text-lg sm:mb-12">
               "Fuel your body and delight your taste buds with our healthy and
@@ -51,13 +52,13 @@ const Home = () => {
         </div>
       </section>
 
-      <div className="grid grid-cols-3 gap-5">
+      <div className="md:grid grid-cols-3 gap-5 m-8  ">
         {allData.map((data) => (
           <Data key={data.id} data={data}></Data>
         ))}
       </div>
 
-      <section className="dark:bg-gray-800 dark:text-gray-100">
+      <section className="dark:bg-gray-800 bg-slate-200 mt-6 dark:text-gray-100">
         <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
           <div>
             <h2 className="text-3xl font-bold tracking-tight text-center sm:text-5xl dark:text-gray-50">
@@ -316,7 +317,7 @@ const Home = () => {
 
         {/* review client */}
 
-        <div className="pt-12 border-t w-full dark:border-gray-700">
+        <div className="pt-12 border-t  w-full dark:border-gray-700">
           <div className="grid md:grid-cols-3">
             <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-700 dark:bg-gray-900 dark:text-gray-100">
               <div className="flex justify-between p-4">
