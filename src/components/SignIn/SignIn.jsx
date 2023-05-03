@@ -35,7 +35,7 @@ const SignIn = () => {
         setSuccess("User has create login successfully");
         navigate(from, {replace: true})
       })
-      .catch((error) => setError(error.message));
+      .catch((error) => setError('Password does not match'));
   };
 
   const signIngoogleHandler =()=>{

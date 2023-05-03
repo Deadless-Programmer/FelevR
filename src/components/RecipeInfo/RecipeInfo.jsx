@@ -22,8 +22,8 @@ const RecipeInfo = ({ recipe }) => {
               <span className="text-lg font-semibold">Ingredients :</span>
               {ingredients
                 .slice(0, 5)
-                .map((single) =>
-                  single ? <li  className="">  {single}</li> : ""
+                .map((single, index) =>
+                  single ? <li key={index}  className="">  {single}</li> : ""
                 )}
             </p>
 

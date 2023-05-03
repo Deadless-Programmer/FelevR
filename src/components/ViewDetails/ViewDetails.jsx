@@ -2,6 +2,7 @@ import React from "react";
 import { useLoaderData, useNavigation } from "react-router-dom";
 import RecipeInfo from "../RecipeInfo/RecipeInfo";
 import Spinner from "../Spinner/Spinner";
+import LazyLoad from "react-lazy-load";
 
 const ViewDetails = () => {
   const data = useLoaderData();
@@ -31,11 +32,13 @@ const ViewDetails = () => {
               href="#"
               aria-label="Te nulla oportere reprimique his dolorum"
             >
-              <img
+             <LazyLoad>
+             <img
                 alt=""
                 className="object-cover w-full h-screen dark:bg-gray-500"
                 src={chefPicture}
               />
+             </LazyLoad>
             </a>
             <div className="flex flex-col flex-1 p-6">
               <a

@@ -38,42 +38,41 @@ const Header = () => {
               tabIndex={0}
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li>
-                <a>Item 1</a>
+              <li className="font-semibold">
+                <ActiveLink to="/">Home</ActiveLink>
               </li>
-              <li tabIndex={0}>
-                <a className="justify-between">
-                  Parent
-                  <svg
-                    className="fill-current"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
+
+              <li className="font-semibold">
+                <ActiveLink to="/blog">Blog</ActiveLink>
+              </li>
+
+              {user ? (
+                <>
+                  <div data-tip={user.displayName}>
+                    <div className="w-8 ml-4 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                      <img src={user.photoURL} />
+                    </div>
+                  </div>
+                  <button
+                    onClick={handleLogOut}
+                    className=" p-3 mr-24  hover:bg-blue-200 rounded font-semibold "
                   >
-                    <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-                  </svg>
-                </a>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a>Item 3</a>
-              </li>
+                    <ActiveLink to="/">Sign Out</ActiveLink>
+                  </button>
+                </>
+              ) : (
+                <button className=" p-3  hover:bg-blue-200 rounded font-semibold ">
+                  <ActiveLink to="/login">Login</ActiveLink>
+                </button>
+              )}
             </ul>
           </div>
-          <a className="btn btn-ghost font-bold normal-case text-3xl">
+          <a className="btn btn-ghost md:ml-8 font-bold normal-case text-3xl">
             Felev<span className="text-orange-500 text-4xl">R</span>{" "}
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
+          <ul className="menu menu-horizontal  px-1">
             <li className="font-semibold">
               <ActiveLink to="/">Home</ActiveLink>
             </li>
@@ -81,29 +80,31 @@ const Header = () => {
             <li className="font-semibold">
               <ActiveLink to="/blog">Blog</ActiveLink>
             </li>
-            {user ? (
-              <>
-                <div
-                  className="avatar tooltip flex items-center gap-5 tooltip-bottom tooltip-secondary"
-                  data-tip={user.displayName}
-                >
-                  <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                    <img src={user.photoURL} />
-                  </div>
-                </div>
-                <button
-                  onClick={handleLogOut}
-                  className="shadow p-3 hover:bg-blue-400 rounded font-bold text-lg"
-                >
-                  <ActiveLink to="/">Sign Out</ActiveLink>
-                </button>
-              </>
-            ) : (
-              <button className="shadow p-3 hover:bg-blue-400 rounded font-bold text-lg">
-                <ActiveLink to="/login">Login</ActiveLink>
-              </button>
-            )}
           </ul>
+        </div>
+        <div className="navbar-end md:mr-10">
+          {user ? (
+            <>
+              <div
+                className="avatar tooltip flex items-center gap-5 tooltip-bottom tooltip-secondary"
+                data-tip={user.displayName}
+              >
+                <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                  <img src={user.photoURL} />
+                </div>
+              </div>
+              <button
+                onClick={handleLogOut}
+                className=" p-3 hover:bg-blue-200 rounded font-semibold "
+              >
+                <ActiveLink to="/">Sign Out</ActiveLink>
+              </button>
+            </>
+          ) : (
+            <button className=" p-3 hover:bg-blue-200 rounded font-semibold">
+              <ActiveLink to="/login">Login</ActiveLink>
+            </button>
+          )}
         </div>
       </div>
     </div>
