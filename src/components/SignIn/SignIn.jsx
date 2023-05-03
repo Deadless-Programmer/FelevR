@@ -3,10 +3,10 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider";
 const SignIn = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn, signInWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
   const location =useLocation();
-  console.log('login page location', location)
+  // console.log('login page location', location)
   const from = location.state?.from?.pathname || '/';
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
@@ -37,6 +37,19 @@ const SignIn = () => {
       })
       .catch((error) => setError(error.message));
   };
+
+  const signIngoogleHandler =()=>{
+    signInWithGoogle()
+    .then(result=>{
+      const loggedUser = result.user;
+      console.log(loggedUser);
+      setError("");
+      navigate(from, {replace: true});
+    })
+    .catch(error=>{
+      setError(error.message)
+    })
+  }
 
   return (
     <div className="">
@@ -78,7 +91,7 @@ const SignIn = () => {
               </div>
               <div>
                 <div className="mb-5 mt-5">
-                  <button
+                  <button onClick={signIngoogleHandler}
                     aria-label="Login with Google"
                     type="button"
                     className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-400 focus:ring-violet-400"
