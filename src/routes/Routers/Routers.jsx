@@ -18,12 +18,12 @@ const router = createBrowserRouter([
             {
                 path:'/',
                 element:<Home></Home>,
-                loader: ()=> fetch('http://localhost:5000/allData')
+                loader: ()=> fetch('https://assingment10-b7-server-project-deadless-programmer.vercel.app/allData')
             },
             {
                 path:'/allData/:id',
                 element: <PrivetRoute><ViewDetails></ViewDetails></PrivetRoute>,
-                loader : ({params})=> fetch(`http://localhost:5000/allData/${params.id}`)
+                loader : ({params})=> fetch(`https://assingment10-b7-server-project-deadless-programmer.vercel.app/allData/${params.id}`)
 
             },
             {
