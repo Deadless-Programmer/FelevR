@@ -6,7 +6,7 @@ const ref = React.createRef();
 const Blog = () => {
 	return (
 		<div className="" >
-      <Pdf targetRef={ref} filename="code-example.pdf">
+      {/* <Pdf targetRef={ref} filename="code-example.pdf">
         {({ toPdf }) => <button onClick={toPdf}>Generate Pdf</button>}
       </Pdf>
       <div ref={ref}>
@@ -110,7 +110,7 @@ const Blog = () => {
         </div>
       </section>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <div>
       <section className="bg-slate-200">
-        <div className="container md:flex flex-col  justify-between p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
+        <div className="container md:flex flex-col items-center justify-between p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
           <div className="md:w-[48%]">
             <h1 className="text-5xl font-bold leading-none sm:text-6xl">
               <span className="text-orange-500">Healthy</span> And Delicious
@@ -25,24 +25,28 @@ const Home = () => {
               "Fuel your body and delight your taste buds with our healthy and
               delicious recipes!"
             </p>
-            <div className="md:flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                className="px-8 hover:bg-orange-500 hover:text-white py-3 text-lg font-semibold rounded dark:bg-violet-400 dark:text-gray-900"
-              >
-                Nourishing
-              </a>
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                className="px-8  hover:bg-orange-500 hover:text-white py-3 text-lg font-semibold border rounded dark:border-gray-100"
-              >
-                Satisfying
-              </a>
+            <div className="flex  gap-4 ">
+              <div>
+                <button
+                  rel="noopener noreferrer"
+                  href="#"
+                  className=" hover:bg-orange-500  btn w-30 btn-outline text-orange-500  hover:text-white text-base font-semibold rounded "
+                >
+                  Nourishing
+                </button>
+              </div>
+              <div>
+                <button
+                  rel="noopener noreferrer"
+                  href="#"
+                  className="  hover:bg-orange-500  btn w-30 btn-outline text-orange-500  hover:text-white text-base font-semibold rounded "
+                >
+                  Satisfying
+                </button>
+              </div>
             </div>
           </div>
-          <div className="md:w-[48%]">
+          <div className="md:w-[48%] mt-10 md:mt-0">
             <img
               src="https://plus.unsplash.com/premium_photo-1663852297516-5c20ed6b1ca4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
               alt=""

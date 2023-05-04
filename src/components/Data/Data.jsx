@@ -1,7 +1,7 @@
 import React from "react";
 import LazyLoad from "react-lazy-load";
 import { Link } from "react-router-dom";
-
+import { FaRegThumbsUp } from "react-icons/fa";
 const Data = ({ data }) => {
   const {
     id,
@@ -28,20 +28,23 @@ const Data = ({ data }) => {
           </span>
           <div className="flex justify-between mt-5">
             <p className="font-semibold">
-              Experience :<span className=""> {yearsOfExperience} Years </span>
+              Experience:<span className=""> {yearsOfExperience} Years </span>
             </p>
 
-            <p className="font-semibold">Recipes : {numbersOfRecipes}</p>
-
-            <p className="font-semibold"> Likes : {Likes}</p>
+            <p className="font-semibold">Recipes: {numbersOfRecipes}</p>
           </div>
-
-          <div className="my-5">
-            <Link to={`/allData/${id}`}>
-              <button className="btn btn-outline btn-success">
-                View Recipes
-              </button>
-            </Link>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center mt-3">
+              <FaRegThumbsUp className="text-xl"></FaRegThumbsUp>
+              <p className="font-semibold ml-2"> Likes: {Likes}</p>
+            </div>
+            <div className="my-5">
+              <Link to={`/allData/${id}`}>
+                <button className=" hover:bg-orange-500 btn  btn-outline text-orange-500  hover:text-white text-base font-semibold rounded">
+                  View Recipes
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

@@ -17,10 +17,9 @@ const ViewDetails = () => {
     Recipes,
   } = data;
 
-
-  const navigation = useNavigation()
-  if(navigation.state ==="loading"){
-	return <Spinner></Spinner>
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return <Spinner></Spinner>;
   }
   return (
     <div className=" p-10 ">
@@ -32,13 +31,13 @@ const ViewDetails = () => {
               href="#"
               aria-label="Te nulla oportere reprimique his dolorum"
             >
-             <LazyLoad>
-             <img
-                alt=""
-                className="object-cover w-full h-screen dark:bg-gray-500"
-                src={chefPicture}
-              />
-             </LazyLoad>
+              <LazyLoad>
+                <img
+                  alt=""
+                  className="object-cover w-full h-screen dark:bg-gray-500"
+                  src={chefPicture}
+                />
+              </LazyLoad>
             </a>
             <div className="flex flex-col flex-1 p-6">
               <a
@@ -61,7 +60,7 @@ const ViewDetails = () => {
           </article>
         </div>
       </div>
-      <div className="w-full grid grid-cols-3 gap-3 overflow-y-auto h-screen">
+      <div className="w-full md:grid grid-cols-3 mt-5 gap-3 ">
         {Recipes.map((recipe) => (
           <RecipeInfo key={recipe.id} recipe={recipe}></RecipeInfo>
         ))}
