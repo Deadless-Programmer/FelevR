@@ -9,22 +9,22 @@ import Spinner from '../../components/Spinner/Spinner';
 
 const Main = () => {
     // const loadSpinner =useLoaderData();
-  const {loading} = useContext(AuthContext);
+//   const {loading} = useContext(AuthContext);
     return (
         <div>
-           {
+           {/* {
             loading ? <Spinner></Spinner> : <> <Header></Header>
             <div className='min-h-[calc(100vh-228px)]'>
             <Outlet></Outlet>
             </div>
             <Footer></Footer></>
-           }
+           } */}
 
-{/* <> <Header></Header>
+<> <Header></Header>
             <div className='min-h-[calc(100vh-228px)]'>
             <Outlet></Outlet>
             </div>
-            <Footer></Footer></> */}
+            <Footer></Footer></>
         </div>
     );
 };

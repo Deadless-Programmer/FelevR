@@ -1,10 +1,13 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 
 const SignUp = () => {
   const { createUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location =useLocation();
+  const from = location.state?.from?.pathname || '/';
   const [error, setError]=useState('');
   const [success, setSuccess]=useState('')
   // console.log(createUser)
@@ -31,7 +34,7 @@ const SignUp = () => {
       form.reset()
       setError('')
       setSuccess('User has been create account successfully')
-      
+      navigate(from, {replace: true})
     })
     .catch(error=>{
       // console.error(error.message);

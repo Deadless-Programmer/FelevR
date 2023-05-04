@@ -42,7 +42,7 @@ const RecipeInfo = ({ recipe }) => {
             </p>
           </div>
           <div className="flex items-center mt-5">
-            <FaRegStar className="text-2xl"></FaRegStar>
+            <FaRegStar className="text-2xl text-orange-500"></FaRegStar>
             <p className="ml-2 text-xl"> {rating}</p>
             <button
               onClick={handleFavoriteClick}

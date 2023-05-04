@@ -10,6 +10,7 @@ const SignIn = () => {
   const from = location.state?.from?.pathname || '/';
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [errortwo, setErrorTwo] =useState("")
 
   const logingHandler = (event) => {
     event.preventDefault();
@@ -23,7 +24,8 @@ const SignIn = () => {
 
     console.log(email, password);
     if (password.length < 6) {
-      setError("Password should have at least 6 character");
+      setErrorTwo("Password should have at least 6 character or more");
+
       return;
     }
     signIn(email, password)
@@ -36,6 +38,7 @@ const SignIn = () => {
         navigate(from, {replace: true})
       })
       .catch((error) => setError('Password does not match'));
+      
   };
 
   const signIngoogleHandler =()=>{
@@ -147,6 +150,7 @@ const SignIn = () => {
                 </span>
                 <p className="text-red-500">{error}</p>
                 <p className="text-green-500">{success}</p>
+                <p className="text-green-500">{errortwo}</p>
               </div>
             </div>
           </div>
