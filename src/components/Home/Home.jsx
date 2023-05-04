@@ -48,7 +48,7 @@ const Home = () => {
           </div>
           <div className="md:w-[48%] mt-10 md:mt-0">
             <img
-              src="https://plus.unsplash.com/premium_photo-1663852297516-5c20ed6b1ca4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+              src="https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               alt=""
               className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128"
             />
