@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { toast } from "react-hot-toast";
+import "react-toastify/dist/ReactToastify.css";
 const SignIn = () => {
   const { signIn, signInWithGoogle, signInWithGithub } =
     useContext(AuthContext);
@@ -25,7 +27,7 @@ const SignIn = () => {
 
     console.log(email, password);
     if (email < 1) {
-      setError("Email not valid");
+      setError("Email is not valid");
       return;
     } else if (password.length < 6) {
       setError("Password should have at least 6 character or more");
@@ -37,6 +39,7 @@ const SignIn = () => {
         console.log(loggedUser);
         form.reset();
         setError("");
+        toast.success("User has create login successfully");
         setSuccess("User has create login successfully");
         navigate(from, { replace: true });
       })
@@ -145,7 +148,7 @@ const SignIn = () => {
               </div>
               <div className="">
                 <span>
-                  Don't have account ? <Link to="/signup">Sign up here</Link>{" "}
+                  Don't have account ? <Link to="/signup" className="text-orange-500" >Sign up here</Link>{" "}
                 </span>
                 <p className="text-red-500">{error}</p>
                 <p className="text-green-500">{success}</p>

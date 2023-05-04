@@ -5,6 +5,7 @@ import html2pdf from "html2pdf.js";
 // const ref = React.createRef();
 
 const Blog = () => {
+  
   const generatePDF = () => {
     const element = document.getElementById("pdf-element"); // replace with your own ID
     html2pdf().from(element).save("my-document.pdf");

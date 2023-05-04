@@ -2,60 +2,60 @@ import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
-
+import { toast } from "react-hot-toast";
+import "react-toastify/dist/ReactToastify.css";
 const SignUp = () => {
   const { createUser } = useContext(AuthContext);
   const navigate = useNavigate();
-  const location =useLocation();
-  const from = location.state?.from?.pathname || '/';
-  const [error, setError]=useState('');
-  const [success, setSuccess]=useState('')
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
   // console.log(createUser)
   const signInHandler = (event) => {
     event.preventDefault();
-    setSuccess('')
-    setError('')
+    setSuccess("");
+    setError("");
     const form = event.target;
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
     const photo = form.photo.value;
     console.log(name, email, password, photo);
-     if(email<1){
-      setError("email not valid")
+    if (email < 1) {
+      setError("email is not valid");
       return;
+    } else if (password.length < 6) {
+      setError("Password should have at least 6 character or more");
     }
-   else if(password.length<6){
-      setError('Password should have at least 6 character or more');
-      
-    }
-   
-    createUser(email, password)
-    .then(result=>{
-      const loggedUser = result.user;
-      profileUpdate(result.user, name, photo)
-      console.log(loggedUser)
-      
-      form.reset()
-      setError('')
-      
-      setSuccess('User has been create account successfully')
-      navigate(from, {replace: true})
-    })
-    .catch(error=>{
-      // console.error(error.message);
-      // setError(error.message);
-      
-    })
-  };
-  const profileUpdate =(user, name, photo)=>{
-        updateProfile(user, {
-          displayName:name, 
-          photoURL: photo
-        }).then(()=>{
 
-        }).catch((error)=>{console.error(error)})
-  }
+    createUser(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        profileUpdate(result.user, name, photo);
+        console.log(loggedUser);
+
+        form.reset();
+        setError("");
+        toast.success(" New account create successfully");
+        setSuccess("User has been create account successfully");
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        // console.error(error.message);
+        // setError(error.message);
+      });
+  };
+  const profileUpdate = (user, name, photo) => {
+    updateProfile(user, {
+      displayName: name,
+      photoURL: photo,
+    })
+      .then(() => {})
+      .catch((error) => {
+        console.error(error);
+      });
+  };
 
   return (
     <div>
@@ -74,7 +74,6 @@ const SignUp = () => {
                   type="text"
                   placeholder="name"
                   name="name"
-                  
                   className="input input-bordered"
                 />
               </div>
@@ -86,7 +85,6 @@ const SignUp = () => {
                   type="email"
                   placeholder="email"
                   name="email"
-                  
                   className="input input-bordered"
                 />
               </div>
@@ -98,7 +96,6 @@ const SignUp = () => {
                   type="password"
                   placeholder="password"
                   name="password"
-                 
                   className="input input-bordered"
                 />
                 <label className="label">
@@ -115,7 +112,6 @@ const SignUp = () => {
                   type="text"
                   placeholder="Photo"
                   name="photo"
-                  required
                   className="input input-bordered"
                 />
               </div>
@@ -123,9 +119,15 @@ const SignUp = () => {
                 <button className="btn btn-primary">Sign up</button>
               </div>
               <div>
-                  <p> Already register ? <span><Link to="/login"> Please login  </Link> </span> </p>
-                  <p className="text-red-500">{error}</p>
-                  <p className="text-green-500">{success}</p>
+                <p>
+                  {" "}
+                  Already register ?{" "}
+                  <span>
+                    <Link to="/login" className="text-orange-500" > Please login </Link>{" "}
+                  </span>{" "}
+                </p>
+                <p className="text-red-500">{error}</p>
+                <p className="text-green-500">{success}</p>
               </div>
             </div>
           </div>
