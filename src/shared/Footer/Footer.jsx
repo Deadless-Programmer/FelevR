@@ -4,6 +4,12 @@ const Footer = () => {
   return (
     <div>
       <footer className="px-4 divide-y bg-orange-200">
+        <div className="text-center ">
+          {" "}
+          <h1 className="text-3xl py-5 font-semibold">
+            THE SITE OF YOUR <span className="text-orange-500">CAMPAIGNS</span>
+          </h1>{" "}
+        </div>
         <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
           <div className="lg:w-1/3">
             <a
@@ -34,7 +40,7 @@ const Footer = () => {
               <ul className="space-y-1">
                 <li>
                   <a rel="noopener noreferrer" href="#">
-                    Our story
+                    Our Story
                   </a>
                 </li>
                 <li>
@@ -56,22 +62,22 @@ const Footer = () => {
             </div>
             <div className="space-y-3">
               <h3 className="tracking-wide uppercase dark:text-gray-50">
-              LEGAL
+                LEGAL
               </h3>
               <ul className="space-y-1">
                 <li>
                   <a rel="noopener noreferrer" href="#">
-                  Terms & Conditions
+                    Terms & Conditions
                   </a>
                 </li>
                 <li>
                   <a rel="noopener noreferrer" href="#">
-                  Privacy Policy
+                    Privacy Policy
                   </a>
                 </li>
                 <li>
                   <a rel="noopener noreferrer" href="#">
-                  Terms of use
+                    Terms of use
                   </a>
                 </li>
               </ul>
