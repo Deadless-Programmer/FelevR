@@ -61,7 +61,7 @@ const Header = () => {
                   </button>
                 </>
               ) : (
-                <button className=" p-3 mr-30  hover:bg-blue-200 rounded font-semibold ">
+                <button className=" p-3 ml-0 me-[118px]   hover:bg-blue-200 rounded font-semibold ">
                   <ActiveLink to="/login">Login</ActiveLink>
                 </button>
               )}
@@ -81,40 +81,54 @@ const Header = () => {
               <ActiveLink to="/blog">Blog</ActiveLink>
             </li>
             {user ? (
-            <>
-              <div
-                className="avatar tooltip  flex items-center gap-5 tooltip-bottom tooltip-success"
-                data-tip={user.displayName}
-              >
-                <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                  <img src={user.photoURL} />
+              <>
+                <div
+                  className="avatar tooltip  flex items-center gap-5 tooltip-bottom tooltip-success"
+                  data-tip={user.displayName}
+                >
+                  <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                    <img src={user.photoURL} />
+                  </div>
                 </div>
-              </div>
-              <button
-                onClick={handleLogOut}
-                className=" p-3 hover:bg-blue-200 rounded font-semibold "
-              >
-                <ActiveLink to="/">Sign Out</ActiveLink>
+                <button
+                  onClick={handleLogOut}
+                  className=" p-3 hover:bg-blue-200 rounded font-semibold "
+                >
+                  <ActiveLink to="/">Sign Out</ActiveLink>
+                </button>
+              </>
+            ) : (
+              <button className=" p-3 hover:bg-blue-200 rounded font-semibold">
+                <ActiveLink to="/login">Login</ActiveLink>
               </button>
-            </>
-          ) : (
-            <button className=" p-3 hover:bg-blue-200 rounded font-semibold">
-              <ActiveLink to="/login">Login</ActiveLink>
-            </button>
-          )}
+            )}
           </ul>
         </div>
         <div className="navbar-end md:mr-10">
-        <button className="btn btn-ghost btn-circle hidden">
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-    </button>
+          <button className="btn btn-ghost btn-circle hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
+            </svg>
+          </button>
         </div>
       </div>
-      
     </div>
   );
 };
-{/* <button className="btn btn-ghost btn-circle">
+{
+  /* <button className="btn btn-ghost btn-circle">
       <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-    </button> */}
+    </button> */
+}
 export default Header;
