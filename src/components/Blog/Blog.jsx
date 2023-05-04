@@ -1,17 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Pdf from "react-to-pdf";
+import html2pdf from 'html2pdf.js';
 const ref = React.createRef();
 
 const Blog = () => {
+
+  const generatePDF = () => {
+    const element = document.getElementById('pdf-element'); // replace with your own ID
+    html2pdf()
+      .from(element)
+      .save('my-document.pdf');
+  };
+   
 	return (
-		<div className="" >
-      {/* <Pdf targetRef={ref} filename="code-example.pdf">
-        {({ toPdf }) => <button onClick={toPdf}>Generate Pdf</button>}
-      </Pdf>
-      <div ref={ref}>
-        <div>
-        <section className="dark:bg-gray-800 dark:text-gray-100">
+    <div>
+      
+      <div id="pdf-element">
+      <section className="dark:bg-gray-800 dark:text-gray-100">
         <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
           <h2 className="mb-12 text-4xl font-bold leading-none text-center sm:text-4xl">
             Frequently Asked Questions
@@ -109,12 +115,12 @@ const Blog = () => {
           </div>
         </div>
       </section>
-        </div>
-      </div> */}
+      </div>
+      <button onClick={generatePDF}>Generate PDF</button>
     </div>
   );
 }
-const rootElement = document.getElementById("root");
-ReactDOM.render(<Blog />, rootElement);
+// const rootElement = document.getElementById("root");
+// ReactDOM.render(<Blog />, rootElement);
 export default Blog;
 
