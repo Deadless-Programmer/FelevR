@@ -13,12 +13,12 @@ const RecipeInfo = ({ recipe }) => {
   };
   return (
     <div>
-      <div className="card w-full bg-orange-100 mt-8 shadow-2xl">
-        <div className="card-body h-screen overflow-y-auto">
+      <div className="card w-full bg-orange-100 mt-8   shadow-2xl">
+        <div className="card-body h-[860px] ">
           <img
             src={img}
             alt=""
-            className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500"
+            className="object-cover object-center w-full rounded-t-md h-72"
           />
           <h2 className="card-title">{name}</h2>
           <div>
@@ -36,7 +36,7 @@ const RecipeInfo = ({ recipe }) => {
               )}
             </p>
 
-            <p className="mt-4">
+            <p className="mt-4 h-52 overflow-y-auto">
               <span className="text-lg font-semibold">Instructions :</span>{" "}
               {instructions}
             </p>
