@@ -3,7 +3,7 @@ import { useLoaderData, useNavigation } from "react-router-dom";
 import RecipeInfo from "../RecipeInfo/RecipeInfo";
 import Spinner from "../Spinner/Spinner";
 import LazyLoad from "react-lazy-load";
-
+import { FaRegThumbsUp } from "react-icons/fa";
 const ViewDetails = () => {
   const data = useLoaderData();
 
@@ -54,7 +54,9 @@ const ViewDetails = () => {
               <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-400">
                 <span>{numbersOfRecipes} Recipes</span>
                 <span>{yearsOfExperience} years of experience</span>
-                <span>{Likes} Likes</span>
+                <span className="flex items-center gap-2">
+                  {Likes} <FaRegThumbsUp className="text-base"> </FaRegThumbsUp>{" "}
+                </span>
               </div>
             </div>
           </article>
