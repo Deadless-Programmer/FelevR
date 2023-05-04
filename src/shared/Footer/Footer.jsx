@@ -29,44 +29,49 @@ const Footer = () => {
           <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
             <div className="space-y-3">
               <h3 className="tracking-wide uppercase dark:text-gray-50">
-                Product
+                ABOUT
               </h3>
               <ul className="space-y-1">
                 <li>
                   <a rel="noopener noreferrer" href="#">
-                    Features
+                    Our story
                   </a>
                 </li>
                 <li>
                   <a rel="noopener noreferrer" href="#">
-                    Integrations
+                    Benefits
                   </a>
                 </li>
                 <li>
                   <a rel="noopener noreferrer" href="#">
-                    Pricing
+                    Team
                   </a>
                 </li>
                 <li>
                   <a rel="noopener noreferrer" href="#">
-                    FAQ
+                    Careers
                   </a>
                 </li>
               </ul>
             </div>
             <div className="space-y-3">
               <h3 className="tracking-wide uppercase dark:text-gray-50">
-                Company
+              LEGAL
               </h3>
               <ul className="space-y-1">
                 <li>
                   <a rel="noopener noreferrer" href="#">
-                    Privacy
+                  Terms & Conditions
                   </a>
                 </li>
                 <li>
                   <a rel="noopener noreferrer" href="#">
-                    Terms of Service
+                  Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#">
+                  Terms of use
                   </a>
                 </li>
               </ul>
