@@ -36,7 +36,7 @@ const Data = ({ data }) => {
           <div className="flex items-center justify-between">
             <div className="flex items-center mt-3">
               <FaRegThumbsUp className="text-xl"></FaRegThumbsUp>
-              <p className="font-semibold ml-2"> Likes: {Likes}</p>
+              <p className="font-semibold ml-2"> {Likes}</p>
             </div>
             <div className="my-5">
               <Link to={`/allData/${id}`}>

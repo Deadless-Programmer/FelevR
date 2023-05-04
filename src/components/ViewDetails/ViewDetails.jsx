@@ -55,7 +55,7 @@ const ViewDetails = () => {
                 <span>{numbersOfRecipes} Recipes</span>
                 <span>{yearsOfExperience} years of experience</span>
                 <span className="flex items-center gap-2">
-                  {Likes} <FaRegThumbsUp className="text-base"> </FaRegThumbsUp>{" "}
+                  {Likes} <FaRegThumbsUp className="text-base"> </FaRegThumbsUp>
                 </span>
               </div>
             </div>
