@@ -14,7 +14,7 @@ const Data = ({ data }) => {
 
   return (
     <div>
-      <div className="w-96 bg-slate-100 p-6 mt-10 md:mt-7 rounded-md shadow-md dark:bg-gray-900 dark:text-gray-50">
+      <div className="w-96 bg-orange-100 p-6 mt-10 md:mt-7 rounded-md shadow-md dark:bg-gray-900 dark:text-gray-50">
         <LazyLoad>
           <img
             src={chefPicture}

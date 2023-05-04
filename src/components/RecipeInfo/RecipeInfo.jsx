@@ -41,7 +41,7 @@ const RecipeInfo = ({ recipe }) => {
               {instructions}
             </p>
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center mt-5">
             <FaRegStar className="text-2xl"></FaRegStar>
             <p className="ml-2 text-xl"> {rating}</p>
             <button
