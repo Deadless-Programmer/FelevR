@@ -23,7 +23,7 @@ const Data = ({ data }) => {
           />
         </LazyLoad>
         <div className="mt-6 mb-2">
-          <span className="block text-2xl   font-bold dark:text-violet-400">
+          <span className="block text-2xl   font-bold text-orange-500">
             {chefName}
           </span>
           <div className="flex justify-between mt-5">

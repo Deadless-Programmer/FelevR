@@ -45,7 +45,7 @@ const ViewDetails = () => {
                 href="#"
                 aria-label="Te nulla oportere reprimique his dolorum"
               ></a>
-              <p className="text-2xl font-semibold tracking-wider uppercase hover:underline dark:text-violet-400">
+              <p className="text-2xl text-orange-400 font-semibold tracking-wider uppercase hover:underline dark:text-violet-400">
                 {chefName}
               </p>
               <h4 className="flex-1 py-2 text-base font-semibold leading-snug">

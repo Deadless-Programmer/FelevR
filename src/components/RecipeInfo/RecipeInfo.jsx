@@ -9,7 +9,7 @@ const RecipeInfo = ({ recipe }) => {
   const { name, ingredients, instructions, rating, img } = recipe;
   const handleFavoriteClick = () => {
     setIsFavorite(true);
-    toast.success("favorites!🤙");
+    toast.success("Favorites!🤙");
   };
   return (
     <div>
@@ -20,7 +20,7 @@ const RecipeInfo = ({ recipe }) => {
             alt=""
             className="object-cover object-center w-full rounded-t-md h-72"
           />
-          <h2 className="card-title">{name}</h2>
+          <h2 className="card-title text-orange-500">{name}</h2>
           <div>
             <p className="mt-2">
               <span className="text-lg font-semibold">Ingredients :</span>

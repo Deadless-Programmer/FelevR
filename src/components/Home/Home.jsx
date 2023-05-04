@@ -66,7 +66,8 @@ const Home = () => {
         <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
           <div>
             <h2 className="text-3xl font-bold tracking-tight text-center sm:text-5xl dark:text-gray-50">
-              Check our new recipes step by step
+              Check our <span className="text-orange-500">new recipes</span>{" "}
+              step by step
             </h2>
             <p className="max-w-3xl mx-auto mt-4 text-xl text-center dark:text-gray-400">
               You can try this to the home
@@ -75,7 +76,7 @@ const Home = () => {
           <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
             <div>
               <h3 className="text-2xl font-bold tracking-tight sm:text-3xl dark:text-gray-50">
-                Spicy Chocolate Mousse
+                <span className="text-orange-500">Spicy</span> Chocolate Mousse
               </h3>
               <p className="mt-3 text-lg dark:text-gray-400">
                 Spicy Chocolate Mousse is a unique and decadent dessert that
@@ -188,7 +189,8 @@ const Home = () => {
             <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
               <div className="lg:col-start-2">
                 <h3 className="text-2xl font-bold tracking-tight sm:text-3xl dark:text-gray-50">
-                  Creamy Garlic Mushroom Risotto
+                  <span className="text-orange-500">Creamy Garlic</span>{" "}
+                  Mushroom Risotto
                 </h3>
                 <p className="mt-3 text-lg dark:text-gray-400">
                   This Creamy Garlic Mushroom Risotto is a comforting and
@@ -307,8 +309,9 @@ const Home = () => {
         <article className="max-w-2xl px-6 py-24 mx-auto space-y-12 dark:bg-gray-800 dark:text-gray-50">
           <div className="w-full mx-auto space-y-4 text-center">
             <h1 className="text-4xl font-bold leading-tight md:text-5xl">
-              "Join the Conversation: Customer Reviews of Our Most Popular
-              Recipes"
+              "Join the Conversation:{" "}
+              <span className="text-orange-500">Customer Reviews</span> of Our
+              Most Popular Recipes"
             </h1>
             {/* <p className="text-sm dark:text-gray-400">by
 			<a rel="noopener noreferrer" href="#" target="_blank" className="underline dark:text-violet-400">

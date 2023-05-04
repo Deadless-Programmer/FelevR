@@ -83,7 +83,7 @@ const Header = () => {
             {user ? (
             <>
               <div
-                className="avatar tooltip flex items-center gap-5 tooltip-bottom tooltip-secondary"
+                className="avatar tooltip  flex items-center gap-5 tooltip-bottom tooltip-success"
                 data-tip={user.displayName}
               >
                 <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
