@@ -12,20 +12,17 @@ const Blog = () => {
 
   return (
     <div>
-      <div className="  mt-10 border p-5 w-[720px] mx-auto ">
-        <div className="text-center">
-          <h3 className="mb-12 text-3xl font-bold leading-none text-center sm:text-4xl">
-            You can download this blog if you want
-          </h3>
-          <button
+      {/* <div className="  mt-10 border p-5 w-[720px] mx-auto ">
+        
+      </div> */}
+ <div className="text-center mt-10">
+ <button
             className=" hover:bg-orange-500  btn w-30 btn-outline text-orange-500  hover:text-white text-base font-semibold rounded "
             onClick={generatePDF}
           >
             Download PDF
           </button>
-        </div>
-      </div>
-
+ </div>
       <div id="pdf-element">
         <section className="dark:bg-gray-800 dark:text-gray-100">
           <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
