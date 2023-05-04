@@ -31,7 +31,7 @@ const Blog = () => {
               <div>
                 <h3 className="font-semibold">How to validate React props using PropTypes?</h3>
                 <p className="mt-1 dark:text-gray-400">
-                To validate React props using PropTypes, you can import the PropTypes library from the 'prop-types' package, and then define the expected type for each prop within the component's propTypes object. This allows you to catch and flag any errors or incorrect data types passed to the component via its props. For example, PropTypes.string will expect a string type, while PropTypes.number will expect a number type. It is considered a best practice to validate your component props using PropTypes to ensure your code runs smoothly and without unexpected errors.
+                You can use the PropTypes library provided by React to validate React props using PropTypes. PropTypes is a type-checking library that allows you to define the types of your component's props. By specifying the expected data type and whether the prop is required, PropTypes can help catch errors and improve the stability of your application. To use PropTypes, import it at the top of your file, define your component and its expected props, and specify the prop types using the propTypes object. You can use a variety of data types, including strings, numbers, booleans, objects, arrays, and functions. When a prop is passed to the component that does not match the specified data type or is missing a required prop, PropTypes will log a warning in the console.
                 </p>
               </div>
               <div>
