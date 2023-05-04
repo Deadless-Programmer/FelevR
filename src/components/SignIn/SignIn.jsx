@@ -26,6 +26,7 @@ const SignIn = () => {
     console.log(email, password);
     if (email < 1) {
       setError("Email not valid");
+      return;
     } else if (password.length < 6) {
       setError("Password should have at least 6 character or more");
       return;

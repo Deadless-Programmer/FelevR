@@ -23,6 +23,7 @@ const SignUp = () => {
     console.log(name, email, password, photo);
      if(email<1){
       setError("email not valid")
+      return;
     }
    else if(password.length<6){
       setError('Password should have at least 6 character or more');

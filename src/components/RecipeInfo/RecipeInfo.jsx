@@ -44,9 +44,9 @@ const RecipeInfo = ({ recipe }) => {
             </p>
           </div>
           <div className="flex items-center mt-5">
-          <Rating style={{ maxWidth: 150 }} value={rating?.number} readOnly />
+          <Rating style={{ maxWidth: 150 }} value={rating} readOnly />
             {/* <FaRegStar className="text-2xl text-orange-500"></FaRegStar> */}
-            <p className="ml-2 text-xl"> {rating?.number}</p>
+            <p className="ml-2 text-xl"> {rating}</p>
             <button
               onClick={handleFavoriteClick}
               disabled={isFavorite}

@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useLoaderData, useNavigation } from "react-router-dom";
 import Data from "../Data/Data";
 import Spinner from "../Spinner/Spinner";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Home = () => {
   const allData = useLoaderData();
+  const {loading} = useContext(AuthContext);
+  if(loading){
+    return <Spinner></Spinner>
+  }
   //   console.log(allData);
   // const {chefPicture, chefName, yearsOfExperience, numbersOfRecipes, Likes }= allData;
 
