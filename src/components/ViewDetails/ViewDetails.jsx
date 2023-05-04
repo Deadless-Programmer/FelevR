@@ -4,6 +4,7 @@ import RecipeInfo from "../RecipeInfo/RecipeInfo";
 import Spinner from "../Spinner/Spinner";
 import LazyLoad from "react-lazy-load";
 import { FaRegThumbsUp } from "react-icons/fa";
+
 const ViewDetails = () => {
   const data = useLoaderData();
 
