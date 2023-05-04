@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
+import { Rating } from '@smastrom/react-rating'
 
+import '@smastrom/react-rating/style.css'
 import { FaRegStar } from "react-icons/fa";
 import "react-toastify/dist/ReactToastify.css";
 const RecipeInfo = ({ recipe }) => {
@@ -42,8 +44,9 @@ const RecipeInfo = ({ recipe }) => {
             </p>
           </div>
           <div className="flex items-center mt-5">
-            <FaRegStar className="text-2xl text-orange-500"></FaRegStar>
-            <p className="ml-2 text-xl"> {rating}</p>
+          <Rating style={{ maxWidth: 150 }} value={rating?.number} readOnly />
+            {/* <FaRegStar className="text-2xl text-orange-500"></FaRegStar> */}
+            <p className="ml-2 text-xl"> {rating?.number}</p>
             <button
               onClick={handleFavoriteClick}
               disabled={isFavorite}

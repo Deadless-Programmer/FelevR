@@ -21,10 +21,14 @@ const SignUp = () => {
     const password = form.password.value;
     const photo = form.photo.value;
     console.log(name, email, password, photo);
-    if(password.length<6){
-      setError('Password should have at least 6 character or more');
-      return;
+     if(email<1){
+      setError("email not valid")
     }
+   else if(password.length<6){
+      setError('Password should have at least 6 character or more');
+      
+    }
+   
     createUser(email, password)
     .then(result=>{
       const loggedUser = result.user;
@@ -69,7 +73,7 @@ const SignUp = () => {
                   type="text"
                   placeholder="name"
                   name="name"
-                  required
+                  
                   className="input input-bordered"
                 />
               </div>
@@ -81,7 +85,7 @@ const SignUp = () => {
                   type="email"
                   placeholder="email"
                   name="email"
-                  required
+                  
                   className="input input-bordered"
                 />
               </div>
@@ -93,7 +97,7 @@ const SignUp = () => {
                   type="password"
                   placeholder="password"
                   name="password"
-                  required
+                 
                   className="input input-bordered"
                 />
                 <label className="label">
