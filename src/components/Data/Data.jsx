@@ -13,7 +13,7 @@ const Data = ({ data }) => {
   } = data;
 
   return (
-    <div>
+    <div className="">
       <div className="w-96 bg-orange-100 p-6 mt-10 md:mt-7 rounded-md shadow-md dark:bg-gray-900 dark:text-gray-50">
         <LazyLoad>
           <img
@@ -35,7 +35,7 @@ const Data = ({ data }) => {
           </div>
           <div className="flex items-center justify-between">
             <div className="flex items-center mt-3">
-              <FaRegThumbsUp className="text-xl"></FaRegThumbsUp>
+              <FaRegThumbsUp className="text-xl text-orange-500"></FaRegThumbsUp>
               <p className="font-semibold ml-2"> {Likes}</p>
             </div>
             <div className="my-5">

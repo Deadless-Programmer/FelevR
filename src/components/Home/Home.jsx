@@ -56,7 +56,7 @@ const Home = () => {
         </div>
       </section>
 
-      <div className="md:grid grid-cols-3 gap-5 m-8  ">
+      <div className="md:grid grid-cols-3  gap-5 md:ml-14 md:mr-16 md:mt-5 md:mb-5  ">
         {allData.map((data) => (
           <Data key={data.id} data={data}></Data>
         ))}

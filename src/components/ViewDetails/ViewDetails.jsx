@@ -62,7 +62,7 @@ const ViewDetails = () => {
           </article>
         </div>
       </div>
-      <div className="w-full md:grid grid-cols-3 mt-5 gap-3 ">
+      <div className="w-full md:grid grid-cols-3 mt-5 gap-3  ">
         {Recipes.map((recipe) => (
           <RecipeInfo key={recipe.id} recipe={recipe}></RecipeInfo>
         ))}
