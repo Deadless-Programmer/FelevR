@@ -22,11 +22,24 @@ const SignUp = () => {
     const password = form.password.value;
     const photo = form.photo.value;
     console.log(name, email, password, photo);
-    if (email < 1) {
-      setError("email is not valid");
+
+    if (name < 1) {
+      toast.error("Input your name");
+      setError("Input your name");
+      return;
+    } else if (email < 1) {
+      toast.error("Input your valid email");
+      setError("Input your valid email");
       return;
     } else if (password.length < 6) {
+      toast.error("Password should have at least 6 character or more");
       setError("Password should have at least 6 character or more");
+      return;
+    }
+    else if(photo < 1 ){
+      toast.error("Include your photo url");
+      setError("Include your photo url")
+      return;
     }
 
     createUser(email, password)
@@ -42,6 +55,7 @@ const SignUp = () => {
         navigate(from, { replace: true });
       })
       .catch((error) => {
+        // toast.success(error.message)
         // console.error(error.message);
         // setError(error.message);
       });
@@ -110,7 +124,7 @@ const SignUp = () => {
                 </label>
                 <input
                   type="text"
-                  placeholder="Photo"
+                  placeholder="photo"
                   name="photo"
                   className="input input-bordered"
                 />
@@ -123,7 +137,10 @@ const SignUp = () => {
                   {" "}
                   Already register ?{" "}
                   <span>
-                    <Link to="/login" className="text-orange-500" > Please login </Link>{" "}
+                    <Link to="/login" className="text-orange-500">
+                      {" "}
+                      Please login{" "}
+                    </Link>{" "}
                   </span>{" "}
                 </p>
                 <p className="text-red-500">{error}</p>

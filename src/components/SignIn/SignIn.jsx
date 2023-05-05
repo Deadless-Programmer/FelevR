@@ -27,9 +27,11 @@ const SignIn = () => {
 
     console.log(email, password);
     if (email < 1) {
-      setError("Email is not valid");
+      toast.error("Input your valid email");
+      setError("Input your valid email")
       return;
     } else if (password.length < 6) {
+      toast.error("Password should have at least 6 character or more");
       setError("Password should have at least 6 character or more");
       return;
     }
@@ -43,7 +45,12 @@ const SignIn = () => {
         setSuccess("User has create login successfully");
         navigate(from, { replace: true });
       })
-      .catch((error) => setError("Password does not match"));
+      .catch((error) => 
+      // toast.error("Password does not match"),
+      setError("Password does not match")
+     
+      );
+      
   };
 
   const signIngoogleHandler = () => {
